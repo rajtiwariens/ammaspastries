@@ -1,42 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ammas Pastries - Bagisto Project</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      padding: 2rem;
-      max-width: 900px;
-      margin: auto;
-      background-color: #f8f8f8;
-      color: #333;
-    }
-    h1, h2, h3 {
-      color: #b22222;
-    }
-    pre {
-      background: #eee;
-      padding: 1rem;
-      border-radius: 5px;
-      overflow-x: auto;
-    }
-    code {
-      background: #f1f1f1;
-      padding: 2px 4px;
-      border-radius: 3px;
-    }
-    ul {
-      margin-left: 2rem;
-    }
-  </style>
-</head>
-<body>
 
-  <h1>🎂 Ammas Pastries - Bagisto Custom E-commerce</h1>
-  <p>A custom e-commerce application for ordering pastries and cakes, built on top of <a href="https://bagisto.com" target="_blank">Bagisto</a> — a Laravel-based eCommerce framework.</p>
+
+  <h1>🎂 Ammas Pastries -E-commerce</h1>
+  <p>A custom e-commerce application for ordering pastries and cakes, built on top of <a href="[https://bagisto.com](https://ammaspastries.in" target="_blank">ammaspastries</a> — a Laravel-based eCommerce framework.</p>
 
   <h2>🚀 Features</h2>
   <ul>
@@ -54,7 +19,7 @@
     <li>Laravel 10</li>
     <li>Bagisto (latest)</li>
     <li>MySQL</li>
-    <li>MAMP (local dev)</li>
+    <li>MAMP,Xammp (local dev)</li>
   </ul>
 
   <h2>🧑‍💻 Local Development Setup</h2>
@@ -115,6 +80,3 @@ resources/
 
   <hr>
   <p><em>Made with 💖 for custom cake lovers 🍰</em></p>
-
-</body>
-</html>
