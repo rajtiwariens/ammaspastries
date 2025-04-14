@@ -29,23 +29,19 @@
 cd ammaspastries</code></pre>
     </li>
 
-    <li><strong>Install dependencies</strong>
-      <pre><code>composer install
-npm install &amp;&amp; npm run dev</code></pre>
-    </li>
+    Install dependencies
+      composer install
+npm install &amp;&amp; npm run dev
 
-    <li><strong>Environment setup</strong>
-      <pre><code>cp .env.example .env
-php artisan key:generate</code></pre>
-    </li>
+    Environment setup</strong>
+      cp .env.example .env
+      php artisan key:generate
 
-    <li><strong>Configure <code>.env</code></strong><br>
+    Configure <code>.env
       Set your database credentials and mail config.
-    </li>
 
-    <li><strong>Run migrations and seeders</strong>
-      <pre><code>php artisan migrate --seed</code></pre>
-    </li>
+   Run migrations and seeders
+   php artisan migrate --seed
 
     <li><strong>Start the server</strong>
       <pre><code>php artisan serve</code></pre>
@@ -61,21 +57,7 @@ php artisan key:generate</code></pre>
     <li>Admin theme overrides for localization and layout</li>
   </ul>
 
-  <h2>📂 Folder Structure Highlights</h2>
-  <pre><code>packages/
-├── AmmasPastries/
-│   └── Blog/
-│       ├── src/
-│       ├── routes/
-│       └── DataGrids/
-└── ...
-resources/
-├── views/
-│   ├── shop/
-│   └── admin/
-</code></pre>
-
-  <h2>📝 License</h2>
+  
   <p>This project is licensed under the MIT License.</p>
 
   <hr>
