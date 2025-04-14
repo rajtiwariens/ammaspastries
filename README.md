@@ -1,7 +1,7 @@
-
-
-  <h1>🎂 Ammas Pastries -E-commerce</h1>
-  <p>A custom e-commerce application for ordering pastries and cakes, built on top of <a href="[https://bagisto.com](https://ammaspastries.in" target="_blank">ammaspastries</a> — a Laravel-based eCommerce framework.</p>
+<h1>🎂 Ammas Pastries - E-commerce</h1>
+  <p>A custom e-commerce application for ordering pastries and cakes, built on top of 
+    <a href="https://ammaspastries.in" target="_blank">ammaspastries.in</a> — powered by a Laravel-based eCommerce framework.
+  </p>
 
   <h2>🚀 Features</h2>
   <ul>
@@ -19,35 +19,33 @@
     <li>Laravel 10</li>
     <li>Bagisto (latest)</li>
     <li>MySQL</li>
-    <li>MAMP,Xammp (local dev)</li>
+    <li>MAMP, XAMPP (local dev)</li>
   </ul>
 
   <h2>🧑‍💻 Local Development Setup</h2>
-  <ol>
-    <li><strong>Clone the repo</strong>
-      <pre><code>git clone https://github.com/rajtiwariens/ammaspastries.git
-cd ammaspastries</code></pre>
-    </li>
-
+  
+    Clone the repo
+    git clone https://github.com/rajtiwariens/ammaspastries.git
+    
+    cd ammaspastries
     Install dependencies
-      composer install
-npm install &amp;&amp; npm run dev
+    composer install
+    npm install && npm run dev
 
-    Environment setup</strong>
+    Environment setup    
       cp .env.example .env
       php artisan key:generate
 
-    Configure <code>.env
+    Configure .env
       Set your database credentials and mail config.
 
-   Run migrations and seeders
-   php artisan migrate --seed
+    Run migrations and seeders
+      php artisan migrate --seed
 
-    <li><strong>Start the server</strong>
-      <pre><code>php artisan serve</code></pre>
+    Start the server
+      php artisan serve
       Then visit: <a href="http://localhost:8000" target="_blank">http://localhost:8000</a>
-    </li>
-  </ol>
+
 
   <h2>🧩 Customizations</h2>
   <ul>
@@ -57,7 +55,7 @@ npm install &amp;&amp; npm run dev
     <li>Admin theme overrides for localization and layout</li>
   </ul>
 
-  
+  <h2>📝 License</h2>
   <p>This project is licensed under the MIT License.</p>
 
   <hr>
