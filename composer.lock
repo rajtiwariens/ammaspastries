@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fc910a34c8d8a736f91506ea46d0d13b",
+    "content-hash": "b8a02970cc6abd8bd8c216d7e5674bcf",
     "packages": [
         {
             "name": "astrotomic/laravel-translatable",
@@ -136,6 +136,7 @@
             },
             "time": "2024-02-14T14:26:21+00:00"
         },
+       
         {
             "name": "barryvdh/laravel-dompdf",
             "version": "v2.2.0",
@@ -11090,6 +11091,54 @@
                 "source": "https://github.com/webmozarts/assert/tree/1.11.0"
             },
             "time": "2022-06-03T18:03:27+00:00"
+        },
+        {
+            "name": "wontonee/razorpay",
+            "version": "4.0.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wontone18/razorpay-payment-gateway-bagisto-laravel.git",
+                "reference": "497d19c03d30b8c9614da759204bef777df75e9e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wontone18/razorpay-payment-gateway-bagisto-laravel/zipball/497d19c03d30b8c9614da759204bef777df75e9e",
+                "reference": "497d19c03d30b8c9614da759204bef777df75e9e",
+                "shasum": ""
+            },
+            "require": {
+                "razorpay/razorpay": "^2.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "aliases": [],
+                    "providers": [
+                        "Wontonee\\Razorpay\\Providers\\RazorpayServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Wontonee\\Razorpay\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Saju G",
+                    "email": "saju.g@wontonetech.com"
+                }
+            ],
+            "description": "Razorpay payment gateway for bagisto laravel open source ecommerce platform.",
+            "support": {
+                "issues": "https://github.com/wontone18/razorpay-payment-gateway-bagisto-laravel/issues",
+                "source": "https://github.com/wontone18/razorpay-payment-gateway-bagisto-laravel/tree/4.0.6"
+            },
+            "time": "2025-01-05T09:54:31+00:00"
         }
     ],
     "packages-dev": [

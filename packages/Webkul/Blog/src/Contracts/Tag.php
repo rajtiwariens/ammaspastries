@@ -2,6 +2,6 @@
 
 namespace Webkul\Blog\Contracts;
 
-interface Post
+interface Tag
 {
 }

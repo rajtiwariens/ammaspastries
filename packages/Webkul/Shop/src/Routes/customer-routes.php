@@ -11,6 +11,7 @@ use Webkul\Shop\Http\Controllers\Customer\RegistrationController;
 use Webkul\Shop\Http\Controllers\Customer\ResetPasswordController;
 use Webkul\Shop\Http\Controllers\Customer\SessionController;
 use Webkul\Shop\Http\Controllers\DataGridController;
+use Webkul\Shop\Http\Controllers\OtpController;
 
 Route::group(['middleware' => ['locale', 'theme', 'currency']], function () {
 
@@ -40,6 +41,13 @@ Route::group(['middleware' => ['locale', 'theme', 'currency']], function () {
             Route::get('', 'index')->name('shop.customer.session.index');
 
             Route::post('', 'store')->name('shop.customer.session.create');
+        });
+        /**
+         * OTP login routes.
+         */
+        Route::controller(OtpController::class)->prefix('otp')->group(function () {
+            Route::post('send', 'sendOtp')->name('shop.customer.otp.send');
+            Route::post('verify', 'verifyOtp')->name('shop.customer.otp.verify');
         });
 
         /**

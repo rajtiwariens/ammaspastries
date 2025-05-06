@@ -53,7 +53,7 @@
                     @lang('admin::app.dashboard.index.today-details')
                 </p>
 
-                <!-- Todays Details Section --> new dashboard
+                <!-- Todays Details Section -->
                 @include('admin::dashboard.todays-details')
             </div>
             
@@ -64,13 +64,13 @@
             <!-- Stock Threshold -->
             <div class="flex flex-col gap-2">
                 <p class="text-base font-semibold text-gray-600 dark:text-gray-300">
-                {{-- @lang('admin::app.dashboard.index.stock-threshold') --}}
+                 @lang('admin::app.dashboard.index.stock-threshold') 
                 </p>
 
                 <!-- Products List -->  
-                {{-- @include('admin::dashboard.stock-threshold-products') --}}
+                 @include('admin::dashboard.stock-threshold-products') 
             </div>
-           {{--  {!! view_render_event('bagisto.admin.dashboard.stock_threshold.after') !!} --}}
+             {!! view_render_event('bagisto.admin.dashboard.stock_threshold.after') !!} 
         </div>
 
         <!-- Right Section -->
@@ -85,23 +85,23 @@
             <!-- Store Stats -->
             <div class="box-shadow rounded bg-white dark:bg-gray-900">
                 <!-- Total Sales Details -->
-                {{--@include('admin::dashboard.total-sales')--}}
+                @include('admin::dashboard.total-sales')
 
                 <!-- Total Visitors Details -->
-                {{--@include('admin::dashboard.total-visitors')--}}
+                @include('admin::dashboard.total-visitors')
 
                 <!-- Top Selling Products -->
-                {{--@include('admin::dashboard.top-selling-products')--}}
+                @include('admin::dashboard.top-selling-products')
 
                 <!-- Top Customers -->
-                {{--@include('admin::dashboard.top-customers')--}}
+                @include('admin::dashboard.top-customers')
             </div>
 
             {!! view_render_event('bagisto.admin.dashboard.store_stats.after') !!}
         </div>
     </div>
     
-    {{-- @pushOnce('scripts')
+     @pushOnce('scripts')
         <script
             type="module"
             src="{{ bagisto_asset('js/chart.js') }}"
@@ -191,5 +191,5 @@
                 },
             });
         </script>
-    @endPushOnce --}}
+    @endPushOnce 
 </x-admin::layouts>

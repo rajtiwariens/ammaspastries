@@ -378,6 +378,9 @@
     .icon-play:before {
         content: "\e945";
     }
+    .icon-contacts:before {
+        content: "\e945";
+    }
       
     p {
         @apply text-[14px] !leading-[17px];

@@ -172,21 +172,6 @@
 
                                                 {{ $item->qty_canceled ? trans('admin::app.sales.orders.view.item-canceled', ['qty_canceled' => $item->qty_canceled]) : '' }}
                                             </p>
-                                            <p class="text-gray-600 dark:text-gray-300">
-                                                 Message on Cake : {{$item->additional['cake_name']}}
-                                            </p>
-                                            <p class="text-gray-600 dark:text-gray-300">
-                                                   Photo on Cake : 
-                                                   <a href="{{$item->additional['cake_image']}}" download>
-                                                    <img 
-                                                        class="w-full h-[60px] max-w-[60px] max-h-[60px] relative rounded"
-                                                         src="{{$item->additional['cake_image']}}"
-                                                         alt="Cake Image"
-                                                      >
-                                                    </a>
-
-                                            </p>
-                                            
                                         </div>
                                     </div>
                                 </div>

@@ -33,6 +33,10 @@ return [
             'button-title'        => 'Sign In',
             'create-your-account' => 'Create your account',
             'email'               => 'Email',
+            'mobile'              => 'Mobile',
+            'otp'                 => 'Otp',
+            'otp-sent'            => 'Otp Send Successfully',
+            'invalid-otp'         => 'Otp Wrong',
             'footer'              => '© Copyright - :current_year, Ammas Pastries. All rights reserved.',
             'forgot-pass'         => 'Forgot Password?',
             'form-login-text'     => 'If you have an account, sign in with your email address.',
@@ -43,7 +47,11 @@ return [
             'password'            => 'Password',
             'show-password'       => 'Show Password',
             'title'               => 'Sign In',
+            'email-login'         => 'Login With Email',
+            'otp-login'           => 'Login With Otp',
+            'send-otp'            => 'Send Otp',
             'verify-first'        => 'Verify your email account first.',
+            'verify-otp'        => 'Verify Otp',
         ],
 
         'signup-form' => [

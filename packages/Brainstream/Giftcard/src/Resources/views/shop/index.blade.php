@@ -84,7 +84,7 @@
                                             :class="{ 'selected': giftcard_amount === amountValue }"
                                             @click="selectAmount(amountValue)"
                                         >
-                                            @{{ `$${amountValue}.00` }}
+                                            @{{ `₹${amountValue}.00` }}
                                         </button>
 
                                         <button
@@ -104,7 +104,7 @@
                                         rules="required|numeric|min_value:50|max_value:100"
                                         v-model="giftcard_amount"
                                         class="mt-4"
-                                        placeholder="Amount Range between $50 - $100"
+                                        placeholder="Amount Range between ₹50 - ₹100"
                                     />
 
                                     <x-shop::form.control-group.error control-name="giftcard_amount" />
@@ -257,7 +257,7 @@
                             <div class="gift-card-details">
                                 <div class="gift-card-value">
                                     <label>Gift Card</label>
-                                    <p>$@{{ giftcard_amount }}</p>
+                                    <p>₹@{{ giftcard_amount }}</p>
                                 </div>
                                 <div class="gift-card-info">
                                     <p><strong>From:</strong> @{{ sendername }}</p>
@@ -448,8 +448,8 @@
                     },
                     loadPayPalScript() {
                         const script = document.createElement('script');
-                        //script.src = "https://www.sandbox.paypal.com/sdk/js?client-id={{--!clientId--}}&currency=USD";
-                        script.src = "https://www.sandbox.paypal.com/sdk/js?client-id=xyz&currency=USD";
+                        //script.src = "https://www.sandbox.paypal.com/sdk/js?client-id={{--clientId--}}&currency=USD";
+                        script.src = "https://www.sandbox.paypal.com/sdk/js?client-id=sb&currency=USD";
 
                         script.onload = () => {
                             this.$nextTick(() => {

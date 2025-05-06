@@ -46,12 +46,12 @@
                 @break
             @case ($customization::CATEGORY_CAROUSEL)
                 <!-- Categories carousel -->
-                <x-shop::categories.carousel
+                <!-- <x-shop::categories.carousel
                     :title="$data['title'] ?? ''"
                     :src="route('shop.api.categories.index', $data['filters'] ?? [])"
                     :navigation-link="route('shop.home.index')"
                     aria-label="Categories Carousel"
-                />
+                /> -->
 
                 @break
             @case ($customization::PRODUCT_CAROUSEL)

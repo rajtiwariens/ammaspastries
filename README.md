@@ -1,6 +1,5 @@
 <h1>🎂 Ammas Pastries - E-commerce</h1>
   <p>A custom e-commerce application for ordering pastries and cakes, built on top of 
-    <a href="https://ammaspastries.in" target="_blank">ammaspastries.in</a> — powered by a Laravel-based eCommerce framework.
   </p>
 
   <h2>🚀 Features</h2>

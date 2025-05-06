@@ -132,7 +132,7 @@ return [
     | (use capital letters!)
     */
 
-    'default_country' => null,
+    'default_country' => 'IN',
 
     /*
     |--------------------------------------------------------------------------
@@ -239,6 +239,7 @@ return [
         Webkul\User\Providers\UserServiceProvider::class,
         Brainstream\Giftcard\Providers\GiftcardServiceProvider::class,
         Webkul\Blog\Providers\BlogServiceProvider::class,
+        Wontonee\Razorpay\Providers\RazorpayServiceProvider::class,
     ])->toArray(),
 
     /*

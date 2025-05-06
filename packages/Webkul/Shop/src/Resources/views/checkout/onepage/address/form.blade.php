@@ -13,7 +13,7 @@
             </x-shop::form.control-group>
 
             <!-- Company Name -->
-            <x-shop::form.control-group>
+            <!-- <x-shop::form.control-group>
                 <x-shop::form.control-group.label>
                     @lang('shop::app.checkout.onepage.address.company-name')
                 </x-shop::form.control-group.label>
@@ -24,7 +24,7 @@
                     ::value="address.company_name"
                     :placeholder="trans('shop::app.checkout.onepage.address.company-name')"
                 />
-            </x-shop::form.control-group>
+            </x-shop::form.control-group> -->
 
             {!! view_render_event('bagisto.shop.checkout.onepage.address.form.company_name.after') !!}
 
@@ -294,7 +294,7 @@
                         last_name: '',
                         email: '',
                         address: [],
-                        country: '',
+                        country: 'IN',
                         state: '',
                         city: '',
                         postcode: '',

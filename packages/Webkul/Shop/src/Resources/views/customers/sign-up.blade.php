@@ -102,6 +102,26 @@
 
                     <x-shop::form.control-group>
                         <x-shop::form.control-group.label class="required">
+                        @lang('shop::app.checkout.onepage.address.telephone')
+                        </x-shop::form.control-group.label>
+
+                        <x-shop::form.control-group.control
+                            type="text"
+                            class="px-6 py-4 max-md:py-3 max-sm:py-2"
+                            name="phone"
+                            rules="required|numeric"
+                            :value="old('phone')"
+                            :label="trans('shop::app.checkout.onepage.address.telephone')"
+                            placeholder="Telephone"
+                            :aria-label="trans('shop::app.checkout.onepage.address.telephone')"
+                            aria-required="true"
+                        />
+
+                        <x-shop::form.control-group.error control-name="email" />
+                    </x-shop::form.control-group>
+
+                    <x-shop::form.control-group>
+                        <x-shop::form.control-group.label class="required">
                             @lang('shop::app.customers.signup-form.email')
                         </x-shop::form.control-group.label>
 
