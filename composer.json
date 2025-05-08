@@ -47,6 +47,7 @@
         "shetabit/visitor": "^4.1",
         "spatie/laravel-responsecache": "^7.4",
         "spatie/laravel-sitemap": "^7.3",
+        "tymon/jwt-auth": "*",
         "wontonee/razorpay": "^4.0"
     },
     "require-dev": {
@@ -98,7 +99,8 @@
             "Webkul\\Theme\\": "packages/Webkul/Theme/src",
             "Webkul\\User\\": "packages/Webkul/User/src",
             "Brainstream\\Giftcard\\": "packages/Brainstream/Giftcard/src",
-            "Webkul\\Blog\\": "packages/Webkul/Blog/src"
+            "Webkul\\Blog\\": "packages/Webkul/Blog/src",
+            "Webkul\\Rewards\\": "packages/Webkul/Rewards/src"
         }
     },
     "autoload-dev": {

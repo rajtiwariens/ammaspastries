@@ -240,6 +240,7 @@ return [
         Brainstream\Giftcard\Providers\GiftcardServiceProvider::class,
         Webkul\Blog\Providers\BlogServiceProvider::class,
         Wontonee\Razorpay\Providers\RazorpayServiceProvider::class,
+        Webkul\Rewards\Providers\RewardsServiceProvider::class,
     ])->toArray(),
 
     /*

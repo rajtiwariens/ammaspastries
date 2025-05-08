@@ -33,6 +33,11 @@ return [
             'build_directory'          => 'themes/blog/build',
             'package_assets_directory' => 'src/Resources/assets',
         ],
+        'reward' => [
+            'hot_file'                 => 'reward-vite.hot',
+            'build_directory'          => 'themes/reward/build',
+            'package_assets_directory' => 'src/Resources/assets',
+        ],
 
     ],
 ];

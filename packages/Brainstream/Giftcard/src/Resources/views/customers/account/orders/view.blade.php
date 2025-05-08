@@ -23,7 +23,7 @@
             <form
                 method="POST"
                 ref="cancelOrderForm"
-                action="{{ route('shop.customers.account.orders.cancel', $order->id) }}"
+                action="{{ route('giftcard.customers.account.orders.cancel', $order->id) }}"
             >
                 @csrf
             </form>

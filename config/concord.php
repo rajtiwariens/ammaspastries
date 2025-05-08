@@ -38,5 +38,6 @@ return [
         \Webkul\User\Providers\ModuleServiceProvider::class,
         \Webkul\Sitemap\Providers\ModuleServiceProvider::class,
         \Webkul\Blog\Providers\ModuleServiceProvider::class,
+        \Webkul\Rewards\Providers\ModuleServiceProvider::class,
     ],
 ];

@@ -22,5 +22,5 @@ Route::group(['middleware' => ['web', 'theme', 'locale', 'currency'], 'prefix' =
 });
 
 Route::group(['middleware' => ['web', 'customer']], function () {
-    Route::post('customer/orders/cancel/{id}', [OrderController::class, 'cancel'])->name('shop.customers.account.orders.cancel');
+    Route::post('customer/orders/cancel/{id}', [OrderController::class, 'cancel'])->name('giftcard.customers.account.orders.cancel');
 });
