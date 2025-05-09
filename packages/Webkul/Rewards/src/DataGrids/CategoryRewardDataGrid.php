@@ -45,7 +45,7 @@ class CategoryRewardDataGrid extends DataGrid
         $this->addColumn([
             'index'      => 'id',
             'label'      => trans('rewards::app.admin.rewards.category.index.datagrid.id'),
-            'type'       => 'integer',
+            'type'       => 'number',
             'searchable' => false,
             'sortable'   => true,
             'filterable' => true,
@@ -63,36 +63,40 @@ class CategoryRewardDataGrid extends DataGrid
         $this->addColumn([
             'index'      => 'reward_points',
             'label'      => trans('rewards::app.admin.rewards.category.index.datagrid.reward-points'),
-            'type'       => 'string',
+            'type'       => 'text',
             'searchable' => false,
             'sortable'   => true,
             'filterable' => true,
         ]);
 
         $this->addColumn([
-            'index'              => 'status',
-            'label'              => trans('rewards::app.admin.rewards.category.index.datagrid.status'),
-            'type'               => 'string',
-            'filterable'         => true,
-            'searchable'         => true,
-            'filterable_type'    => 'dropdown',
-            'filterable_options' => [
-                [
-                    'label' => trans('rewards::app.admin.rewards.category.index.datagrid.options.active'),
-                    'value' => '1',
-                ],
-                [
-                    'label' => trans('rewards::app.admin.rewards.category.index.datagrid.options.inactive'),
-                    'value' => '0',
+            'index'      => 'status',
+            'label'      => trans('rewards::app.admin.rewards.category.index.datagrid.status'),
+            'type'       => 'dropdown',
+            'options'    => [
+                'type' => 'basic',
+
+                'params' => [
+                    'options' => [
+                        [
+                            'label'  => trans('rewards::app.admin.rewards.category.index.datagrid.options.active'),
+                            'value'  => '1',
+                        ], [
+                            'label'  => trans('rewards::app.admin.rewards.category.index.datagrid.options.inactive'),
+                            'value'  => '0',
+                        ],
+                    ],
                 ],
             ],
-            'sortable'           => true,
-            'closure'            => function ($row) {
+            'sortable'   => true,
+            'searchable' => true,
+            'filterable' => true,
+            'closure'    => function ($row) {
                 if ($row->status) {
-                    return '<span class="label-active">' . trans('rewards::app.admin.rewards.category.index.datagrid.options.active') . '</span>';
+                    return '<span class="label-active">'.trans('rewards::app.admin.rewards.category.index.datagrid.options.active').'</span>';
                 }
-        
-                return '<span class="label-info">' . trans('rewards::app.admin.rewards.category.index.datagrid.options.inactive') . '</span>';
+
+                return '<span class="label-info">'.trans('rewards::app.admin.rewards.category.index.datagrid.options.inactive').'</span>';
             },
         ]);
     }

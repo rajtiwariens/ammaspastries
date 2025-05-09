@@ -3,7 +3,7 @@
 namespace Webkul\Rewards;
 
 use Illuminate\Support\Arr;
-use Webkul\Tax\Facades\Tax;
+use Webkul\Tax\Helpers\Tax;
 use Illuminate\Support\Facades\Event;
 use Webkul\Checkout\Cart as BaseCart;
 use Webkul\Checkout\Repositories\CartAddressRepository;
@@ -39,14 +39,14 @@ class Cart extends BaseCart
      *
      * @return void
      */
-    public function collectTotals(): \Webkul\Checkout\Cart
+    public function collectTotals(): void
     {
         if (! $this->validateItems()) {
-            $this->resetCart();
+            return;
         }
 
         if (! $cart = $this->getCart()) {
-            return $this;
+            return;
         }
 
         Event::dispatch('checkout.cart.collect.totals.before', $cart);
@@ -90,9 +90,9 @@ class Cart extends BaseCart
 
         $cart->items_count = $cart->items->count();
 
-        $cart->tax_total = Tax::getTaxRatesWithAmount($cart, false);
+        $cart->tax_total = Tax::getTaxTotal($cart, false);
 
-        $cart->base_tax_total = Tax::getTaxRatesWithAmount($cart, true);
+        $cart->base_tax_total = Tax::getTaxTotal($cart, true);
 
         $cart->grand_total = $cart->sub_total + $cart->tax_total - $cart->discount_amount;
 
@@ -135,8 +135,6 @@ class Cart extends BaseCart
         $cart->save();
 
         Event::dispatch('checkout.cart.collect.totals.after', $cart);
-
-        return $this;
     }
 
     /**

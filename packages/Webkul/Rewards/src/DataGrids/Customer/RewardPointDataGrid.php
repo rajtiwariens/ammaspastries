@@ -43,8 +43,7 @@ class RewardPointDataGrid extends DataGrid
         $this->addColumn([
             'index'      => 'created_at',
             'label'      => trans('rewards::app.shop.customer.account.rewards.index.datagrid.created-at'),
-            'type'       => 'date',
-            'filterable_type' => 'date_range',
+            'type'       => 'date_range',
             'searchable' => true,
             'sortable'   => true,
             'filterable' => true,
@@ -53,7 +52,7 @@ class RewardPointDataGrid extends DataGrid
         $this->addColumn([
             'index'      => 'reward_points',
             'label'      => trans('rewards::app.shop.customer.account.rewards.index.datagrid.reward-points'),
-            'type'       => 'integer',
+            'type'       => 'number',
             'searchable' => true,
             'sortable'   => true,
             'filterable' => true,
@@ -62,7 +61,7 @@ class RewardPointDataGrid extends DataGrid
         $this->addColumn([
             'index'      => 'note',
             'label'      => trans('rewards::app.shop.customer.account.rewards.index.datagrid.note'),
-            'type'       => 'string',
+            'type'       => 'text',
             'searchable' => true,
             'sortable'   => true,
             'filterable' => true,
@@ -71,67 +70,66 @@ class RewardPointDataGrid extends DataGrid
         $this->addColumn([
             'index'      => 'exp_date',
             'label'      => trans('rewards::app.shop.customer.account.rewards.index.datagrid.exp-date'),
-            'type'       => 'date',
-            'filterable_type' => 'date_range',
+            'type'       => 'date_range',
             'searchable' => true,
             'sortable'   => true,
             'filterable' => true,
         ]);
 
         $this->addColumn([
-            'index'              => 'status',
-            'label'              => trans('rewards::app.shop.customer.account.rewards.index.datagrid.status'),
-            'type'               => 'string',
-            'filterable'         => true,
-            'searchable'         => false,
-            'filterable_type'    => 'dropdown',
-            'filterable_options' => [
-                [
-                    'label' => trans('rewards::app.shop.customer.account.rewards.index.datagrid.processing'),
-                    'value' => RewardPoint::STATUS_PROCESSING,
-                ],
-                [
-                    'label' => trans('rewards::app.shop.customer.account.rewards.index.datagrid.approved'),
-                    'value' => RewardPoint::STATUS_APPROVED,
-                ],
-                [
-                    'label' => trans('rewards::app.shop.customer.account.rewards.index.datagrid.canceled'),
-                    'value' => RewardPoint::STATUS_CANCELED,
-                ],
-                [
-                    'label' => trans('rewards::app.shop.customer.account.rewards.index.datagrid.closed'),
-                    'value' => RewardPoint::STATUS_CLOSED,
-                ],
-                [
-                    'label' => trans('rewards::app.shop.customer.account.rewards.index.datagrid.pending'),
-                    'value' => RewardPoint::STATUS_PENDING,
-                ],
-                [
-                    'label' => trans('rewards::app.shop.customer.account.rewards.index.datagrid.fraud'),
-                    'value' => RewardPoint::STATUS_FRAUD,
+            'index'      => 'status',
+            'label'      => trans('rewards::app.shop.customer.account.rewards.index.datagrid.status'),
+            'type'       => 'dropdown',
+            'options'    => [
+                'type' => 'basic',
+
+                'params' => [
+                    'options' => [
+                        [
+                            'label'  => trans('rewards::app.shop.customer.account.rewards.index.datagrid.processing'),
+                            'value'  => RewardPoint::STATUS_PROCESSING,
+                        ], [
+                            'label'  => trans('rewards::app.shop.customer.account.rewards.index.datagrid.approved'),
+                            'value'  => RewardPoint::STATUS_APPROVED,
+                        ], [
+                            'label'  => trans('rewards::app.shop.customer.account.rewards.index.datagrid.canceled'),
+                            'value'  => RewardPoint::STATUS_CANCELED,
+                        ], [
+                            'label'  => trans('rewards::app.shop.customer.account.rewards.index.datagrid.closed'),
+                            'value'  => RewardPoint::STATUS_CLOSED,
+                        ], [
+                            'label'  => trans('rewards::app.shop.customer.account.rewards.index.datagrid.pending'),
+                            'value'  => RewardPoint::STATUS_PENDING,
+                        ], [
+                            'label'  => trans('rewards::app.shop.customer.account.rewards.index.datagrid.fraud'),
+                            'value'  => RewardPoint::STATUS_FRAUD,
+                        ],
+                    ],
                 ],
             ],
-            'sortable'           => true,
-            'closure'            => function ($value) {
+            'searchable' => false,
+            'filterable' => true,
+            'sortable'   => true,
+            'closure'    => function ($value) {
                 switch ($value->status) {
                     case RewardPoint::STATUS_PROCESSING:
-                        return '<span class="label-info">' . trans('rewards::app.shop.customer.account.rewards.index.datagrid.processing') . '</span>';
+                        return '<span class="label-info">'.trans('rewards::app.shop.customer.account.rewards.index.datagrid.processing').'</span>';
                     case RewardPoint::STATUS_APPROVED:
-                        return '<span class="label-active">' . trans('rewards::app.shop.customer.account.rewards.index.datagrid.approved') . '</span>';
+                        return '<span class="label-active">'.trans('rewards::app.shop.customer.account.rewards.index.datagrid.approved').'</span>';
                     case RewardPoint::STATUS_CANCELED:
-                        return '<span class="label-cancel">' . trans('rewards::app.shop.customer.account.rewards.index.datagrid.canceled') . '</span>';
+                        return '<span class="label-cancel">'.trans('rewards::app.shop.customer.account.rewards.index.datagrid.canceled').'</span>';
                     case RewardPoint::STATUS_CLOSED:
-                        return '<span class="label-closed">' . trans('rewards::app.shop.customer.account.rewards.index.datagrid.closed') . '</span>';
+                        return '<span class="label-closed">'.trans('rewards::app.shop.customer.account.rewards.index.datagrid.closed').'</span>';
                     case RewardPoint::STATUS_PENDING:
-                        return '<span class="label-pending">' . trans('rewards::app.shop.customer.account.rewards.index.datagrid.pending') . '</span>';
+                        return '<span class="label-pending">'.trans('rewards::app.shop.customer.account.rewards.index.datagrid.pending').'</span>';
                     case RewardPoint::STATUS_FRAUD:
-                        return '<span class="label-closed">' . trans('rewards::app.shop.customer.account.rewards.index.datagrid.fraud') . '</span>';
+                        return '<span class="label-closed">'.trans('rewards::app.shop.customer.account.rewards.index.datagrid.fraud').'</span>';
                     case RewardPoint::STATUS_EXPIRE:
-                        return '<span class="label-cancel">' . trans('rewards::app.shop.customer.account.rewards.index.datagrid.expire') . '</span>';
+                        return '<span class="label-cancel">'.trans('rewards::app.shop.customer.account.rewards.index.datagrid.expire').'</span>';
                     case RewardPoint::STATUS_USED:
-                        return '<span class="label-processing">' . trans('rewards::app.shop.customer.account.rewards.index.datagrid.used') . '</span>';
+                        return '<span class="label-processing">'.trans('rewards::app.shop.customer.account.rewards.index.datagrid.used').'</span>';
                     case RewardPoint::STATUS_DISAPPROVED:
-                        return '<span class="label-closed">' . trans('rewards::app.shop.customer.account.rewards.index.datagrid.canceled') . '</span>';
+                        return '<span class="label-closed">'.trans('rewards::app.shop.customer.account.rewards.index.datagrid.canceled').'</span>';
                 }
             },
         ]);

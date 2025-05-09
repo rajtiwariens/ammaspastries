@@ -46,7 +46,7 @@ class ProductRewardDataGrid extends DataGrid
         $this->addColumn([
             'index'      => 'id',
             'label'      => trans('rewards::app.admin.rewards.products.index.datagrid.id'),
-            'type'       => 'integer',
+            'type'       => 'number',
             'searchable' => false,
             'sortable'   => true,
             'filterable' => true,
