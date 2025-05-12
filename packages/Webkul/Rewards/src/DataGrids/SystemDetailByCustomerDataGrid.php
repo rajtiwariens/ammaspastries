@@ -60,7 +60,7 @@ class SystemDetailByCustomerDataGrid extends DataGrid
         $this->addColumn([
             'index'      => 'reward_points',
             'label'      => trans('rewards::app.admin.rewards.system.view.datagrid.reward-points'),
-            'type'       => 'number',
+            'type'       => 'integer',
             'searchable' => true,
             'sortable'   => true,
             'filterable' => true,
@@ -99,7 +99,7 @@ class SystemDetailByCustomerDataGrid extends DataGrid
         $this->addColumn([
             'index'      => 'exp_date',
             'label'      => trans('rewards::app.admin.rewards.system.view.datagrid.exp-date'),
-            'type'       => 'number',
+            'type'       => 'integer',
             'searchable' => true,
             'sortable'   => true,
             'filterable' => true,

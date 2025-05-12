@@ -44,7 +44,7 @@ class CartRewardDataGrid extends DataGrid
         $this->addColumn([
             'index'      => 'id',
             'label'      => trans('rewards::app.admin.rewards.cart.index.datagrid.id'),
-            'type'       => 'number',
+            'type'       => 'integer',
             'searchable' => false,
             'sortable'   => true,
             'filterable' => true,
@@ -80,7 +80,8 @@ class CartRewardDataGrid extends DataGrid
         $this->addColumn([
             'index'      => 'start_date',
             'label'      => trans('rewards::app.admin.rewards.cart.index.datagrid.start-date'),
-            'type'       => 'date_range',
+            'type'       => 'date',
+            'filterable_type' => 'date_range',
             'searchable' => true,
             'sortable'   => true,
             'filterable' => true,
@@ -89,7 +90,8 @@ class CartRewardDataGrid extends DataGrid
         $this->addColumn([
             'index'      => 'end_date',
             'label'      => trans('rewards::app.admin.rewards.cart.index.datagrid.end-date'),
-            'type'       => 'date_range',
+            'type'       => 'date',
+            'filterable_type' => 'date_range',
             'searchable' => true,
             'sortable'   => true,
             'filterable' => true,
@@ -98,12 +100,9 @@ class CartRewardDataGrid extends DataGrid
         $this->addColumn([
             'index'      => 'status',
             'label'      => trans('rewards::app.admin.rewards.cart.index.datagrid.status'),
-            'type'       => 'dropdown',
-            'options'    => [
-                'type' => 'basic',
-
-                'params' => [
-                    'options' => [
+            'type'       => 'boolean',
+            'filterable_type'    => 'dropdown',
+            'filterable_options'    =>  [
                         [
                             'label'  => trans('rewards::app.admin.rewards.cart.index.datagrid.options.active'),
                             'value'  => '1',
@@ -112,8 +111,6 @@ class CartRewardDataGrid extends DataGrid
                             'value'  => '0',
                         ],
                     ],
-                ],
-            ],
             'sortable'   => true,
             'searchable' => false,
             'filterable' => true,

@@ -531,7 +531,7 @@
                     reviews: [],
 
                     links: {
-                        next: '{{ route('shop.api.products.reviews.index', $product->id) }}',
+                        next: '{{ route("shop.api.products.reviews.index", $product->id) }}',
                     },
 
                     meta: {},
@@ -568,7 +568,7 @@
 
                     params.attachments = selectedFiles;
 
-                    this.$axios.post('{{ route('shop.api.products.reviews.store', $product->id) }}', params, {
+                    this.$axios.post('{{ route("shop.api.products.reviews.store", $product->id) }}', params, {
                             headers: {
                                 'Content-Type': 'multipart/form-data'
                             }

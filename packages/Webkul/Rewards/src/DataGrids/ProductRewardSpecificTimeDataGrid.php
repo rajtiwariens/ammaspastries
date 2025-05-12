@@ -50,7 +50,7 @@ class ProductRewardSpecificTimeDataGrid extends DataGrid
         $this->addColumn([
             'index'      => 'id',
             'label'      => trans('rewards::app.admin.rewards.products.index.datagrid.id'),
-            'type'       => 'number',
+            'type'       => 'integer',
             'searchable' => false,
             'sortable'   => true,
             'filterable' => true,
@@ -86,7 +86,8 @@ class ProductRewardSpecificTimeDataGrid extends DataGrid
         $this->addColumn([
             'index'      => 'start_time',
             'label'      => trans('rewards::app.admin.rewards.products.index.datagrid.start-date'),
-            'type'       => 'date_range',
+            'type'       => 'date',
+            'filterable_type' => 'date_range',
             'searchable' => true,
             'sortable'   => true,
             'filterable' => true,
@@ -95,7 +96,8 @@ class ProductRewardSpecificTimeDataGrid extends DataGrid
         $this->addColumn([
             'index'      => 'end_time',
             'label'      => trans('rewards::app.admin.rewards.products.index.datagrid.end-date'),
-            'type'       => 'date_range',
+            'type'       => 'date',
+            'filterable_type' => 'date_range',
             'searchable' => true,
             'sortable'   => true,
             'filterable' => false,
@@ -104,12 +106,9 @@ class ProductRewardSpecificTimeDataGrid extends DataGrid
         $this->addColumn([
             'index'      => 'status',
             'label'      => trans('rewards::app.admin.rewards.products.index.datagrid.status'),
-            'type'       => 'dropdown',
-            'options'    => [
-                'type' => 'basic',
-
-                'params' => [
-                    'options' => [
+            'type'       => 'boolean',
+            'filterable_type'    => 'dropdown',
+            'filterable_options'    => [
                         [
                             'label'  => trans('rewards::app.admin.rewards.products.index.datagrid.options.active'),
                             'value'  => '1',
@@ -117,8 +116,6 @@ class ProductRewardSpecificTimeDataGrid extends DataGrid
                             'label'  => trans('rewards::app.admin.rewards.products.index.datagrid.options.inactive'),
                             'value'  => '0',
                         ],
-                    ],
-                ],
             ],
             'sortable'   => true,
             'searchable' => false,

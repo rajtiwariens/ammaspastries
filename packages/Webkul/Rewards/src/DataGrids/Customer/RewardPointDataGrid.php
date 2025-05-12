@@ -52,7 +52,7 @@ class RewardPointDataGrid extends DataGrid
         $this->addColumn([
             'index'      => 'reward_points',
             'label'      => trans('rewards::app.shop.customer.account.rewards.index.datagrid.reward-points'),
-            'type'       => 'number',
+            'type'       => 'integer',
             'searchable' => true,
             'sortable'   => true,
             'filterable' => true,

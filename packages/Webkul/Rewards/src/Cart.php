@@ -3,7 +3,7 @@
 namespace Webkul\Rewards;
 
 use Illuminate\Support\Arr;
-use Webkul\Tax\Helpers\Tax;
+use Webkul\Tax\Facades\Tax;
 use Illuminate\Support\Facades\Event;
 use Webkul\Checkout\Cart as BaseCart;
 use Webkul\Checkout\Repositories\CartAddressRepository;
@@ -39,14 +39,16 @@ class Cart extends BaseCart
      *
      * @return void
      */
-    public function collectTotals(): void
-    {
+    
+    public function collectTotals(): \Webkul\Checkout\Cart
+    {   
+        $cart = $this->getCart();
         if (! $this->validateItems()) {
-            return;
+            return $this;
         }
 
         if (! $cart = $this->getCart()) {
-            return;
+            return $this;
         }
 
         Event::dispatch('checkout.cart.collect.totals.before', $cart);
@@ -87,15 +89,16 @@ class Cart extends BaseCart
         }
 
         $cart->items_qty = $quantities;
-
         $cart->items_count = $cart->items->count();
 
-        $cart->tax_total = Tax::getTaxTotal($cart, false);
+        // Calculate tax totals
+        $taxRates = Tax::getTaxRatesWithAmount($cart, false);
+        $baseTaxRates = Tax::getTaxRatesWithAmount($cart, true);
 
-        $cart->base_tax_total = Tax::getTaxTotal($cart, true);
+        $cart->tax_total = array_sum(array_column($taxRates, 'tax_amount'));
+        $cart->base_tax_total = array_sum(array_column($baseTaxRates, 'tax_amount'));
 
         $cart->grand_total = $cart->sub_total + $cart->tax_total - $cart->discount_amount;
-
         $cart->base_grand_total = $cart->base_sub_total + $cart->base_tax_total - $cart->base_discount_amount;
 
         if (
@@ -135,6 +138,7 @@ class Cart extends BaseCart
         $cart->save();
 
         Event::dispatch('checkout.cart.collect.totals.after', $cart);
+        return $this;
     }
 
     /**

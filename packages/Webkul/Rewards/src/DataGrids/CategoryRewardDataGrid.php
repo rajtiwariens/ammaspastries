@@ -45,7 +45,7 @@ class CategoryRewardDataGrid extends DataGrid
         $this->addColumn([
             'index'      => 'id',
             'label'      => trans('rewards::app.admin.rewards.category.index.datagrid.id'),
-            'type'       => 'number',
+            'type'       => 'integer',
             'searchable' => false,
             'sortable'   => true,
             'filterable' => true,
@@ -63,7 +63,7 @@ class CategoryRewardDataGrid extends DataGrid
         $this->addColumn([
             'index'      => 'reward_points',
             'label'      => trans('rewards::app.admin.rewards.category.index.datagrid.reward-points'),
-            'type'       => 'text',
+            'type'       => 'string',
             'searchable' => false,
             'sortable'   => true,
             'filterable' => true,
@@ -72,12 +72,11 @@ class CategoryRewardDataGrid extends DataGrid
         $this->addColumn([
             'index'      => 'status',
             'label'      => trans('rewards::app.admin.rewards.category.index.datagrid.status'),
-            'type'       => 'dropdown',
-            'options'    => [
-                'type' => 'basic',
-
-                'params' => [
-                    'options' => [
+            'type'       => 'string',
+            'filterable'         => true,
+            'searchable'         => true,
+            'filterable_type'    => 'dropdown',
+            'filterable_options' => [
                         [
                             'label'  => trans('rewards::app.admin.rewards.category.index.datagrid.options.active'),
                             'value'  => '1',
@@ -86,11 +85,7 @@ class CategoryRewardDataGrid extends DataGrid
                             'value'  => '0',
                         ],
                     ],
-                ],
-            ],
-            'sortable'   => true,
-            'searchable' => true,
-            'filterable' => true,
+            
             'closure'    => function ($row) {
                 if ($row->status) {
                     return '<span class="label-active">'.trans('rewards::app.admin.rewards.category.index.datagrid.options.active').'</span>';
