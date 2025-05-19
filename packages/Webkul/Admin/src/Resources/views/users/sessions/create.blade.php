@@ -4,7 +4,7 @@
         @lang('admin::app.users.sessions.title')
     </x-slot>
 
-    <div class="flex h-[100vh] items-center justify-center">
+    <div class="flex h-[100vh] items-center justify-center" style="background-image: url('/storage/login-bg.jpg')">
         <div class="flex flex-col items-center gap-5">
             <!-- Logo -->            
             @if ($logo = core()->getConfigData('general.design.admin_logo.logo_image'))
@@ -16,7 +16,7 @@
             @else
                 <img
                     class="w-max" 
-                    src="{{ bagisto_asset('images/logo.svg') }}"
+                    src="{{ bagisto_asset('images/login-bg.jpg') }}"
                     alt="{{ config('app.name') }}"
                 />
             @endif
@@ -98,11 +98,8 @@
             </div>
 
             <!-- Powered By -->
-            <div class="text-sm font-normal">
-                @lang('admin::app.users.sessions.powered-by-description', [
-                    'bagisto' => '<a class="text-blue-600 hover:underline" href="https://bagisto.com/en/">Bagisto</a>',
-                    'webkul' => '<a class="text-blue-600 hover:underline" href="https://webkul.com/">Webkul</a>',
-                ])
+            <div class="text-sm text-black font-black bg-gray-100 shadow-md rounded-lg p-4">
+                @lang('admin::app.users.sessions.powered-by-description')
             </div>
         </div>
     </div>

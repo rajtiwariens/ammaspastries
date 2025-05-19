@@ -13,9 +13,9 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        \Webkul\Rewards\Console\Commands\CheckRewardExpire::class,
-        \Webkul\Rewards\Console\Commands\RewardByDateOfBirth::class,
-        \Webkul\Rewards\Console\Commands\DisableTimeReward::class,
+        // \Webkul\Rewards\Console\Commands\CheckRewardExpire::class,
+        // \Webkul\Rewards\Console\Commands\RewardByDateOfBirth::class,
+        // \Webkul\Rewards\Console\Commands\DisableTimeReward::class,
     ];
 
     /**
@@ -30,10 +30,10 @@ class Kernel extends ConsoleKernel
         $schedule->command('indexer:index --type=price')->dailyAt('00:01');
 
         $schedule->command('product:price-rule:index')->dailyAt('00:01');
-        $schedule->command('booking:cron')->dailyAt('3:00');
-        $schedule->command('dob:cron')->daily();
-        $schedule->command('reward:expire')->daily();
-        $schedule->command('time-reward:disable')->daily();
+       // $schedule->command('booking:cron')->dailyAt('3:00');
+        //$schedule->command('dob:cron')->daily();
+        //$schedule->command('reward:expire')->daily();
+        //$schedule->command('time-reward:disable')->daily();
     }
 
     /**
@@ -45,7 +45,7 @@ class Kernel extends ConsoleKernel
     {
         $this->load(__DIR__.'/Commands');
         $this->load(__DIR__.'/../../packages/Webkul/Core/src/Console/Commands');
-        $this->load(__DIR__.'/../../packages/Webkul/Rewards/src/Console/Commands');
+        //$this->load(__DIR__.'/../../packages/Webkul/Rewards/src/Console/Commands');
 
         require base_path('routes/console.php');
     }
